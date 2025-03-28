@@ -36,7 +36,13 @@ if consulta:
         query = "SELECT PERIODO, VOLANTE, TRASLADOS_AUTORIZADOS, DISPONIBLES, COD_AXSEG, MIPRES, COORDINACIÓN FROM mi_tabla WHERE ID = ?"
         df = pd.read_sql_query(query, conn, params=(consulta,))
 
-        query_3 = "SELECT COORDINACIÓN FROM mi_tabla JOIN coordinacion ON COORDINACIÓN = COORDINACIÓN ?"
+        query_3 = """
+SELECT * 
+FROM mi_tabla 
+JOIN coordinacion 
+ON mi_tabla.COORDINACIÓN = coordinacion.COORDINACIÓN
+WHERE mi_tabla.COORDINACIÓN = ?
+"""
         df_3 = pd.read_sql_query(query_3, conn, params=(consulta,))
         
         if df.empty:
