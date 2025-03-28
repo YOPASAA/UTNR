@@ -63,21 +63,25 @@ if consulta:
             st.markdown("💡**Muy bien hemos encontrado autorizaciones, si tienes traslados disponibles puedes agendar tus servicios.**")
             
             tel_at = df_2["CEL"].values[0]
-            mensaje = "Hola perro quiero más información."
+            mensaje = "Hola atencion quiero más información."
             mensaje_codificado = urllib.parse.quote(mensaje)  # Codifica caracteres especiales
-            url_whatsapp = f"https://wa.me/{tel_at}?text={mensaje_codificado}"
+            url_whatsapp_at = f"https://wa.me/{tel_at}?text={mensaje_codificado}"
             
             tel_co = df_2["TelCoord"].values[0]
-            mensaje = "Hola perro quiero más información."
+            mensaje = "Hola Coord quiero más información."
             mensaje_codificado = urllib.parse.quote(mensaje)  # Codifica caracteres especiales
-            url_whatsapp = f"https://wa.me/{tel_co}?text={mensaje_codificado}"
+            url_whatsapp_co = f"https://wa.me/{tel_co}?text={mensaje_codificado}"
             
             col1, col2, col3 = st.columns([1, 1, 1])
             col1.link_button("📅 Solicitar Servicios",link, use_container_width=True)  # Izquierda
-            col2.link_button("🗣️​ Atención Paciente en WhatsApp", url_whatsapp, use_container_width=True)  # Centro
-            col3.link_button("📲 Contacto Coordinación en WhatsApp", url_whatsapp, use_container_width=True)  # Derecha
+            col2.link_button("🗣️​ Atención Paciente en WhatsApp", url_whatsapp_at, use_container_width=True)  # Centro
+            col3.link_button("📲 Contacto Coordinación en WhatsApp", url_whatsapp_co, use_container_width=True)  # Derecha
 
 
     else:
         st.error("Por favor, ingrese un ID numérico válido.")
 conn.close()
+
+
+
+            
