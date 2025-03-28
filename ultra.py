@@ -58,7 +58,7 @@ if consulta:
             link = df_2["Link"].values[0]
             st.subheader(f"👤{tipo}-{consulta} | {nombre} | {ciudad}")
             st.dataframe(df, use_container_width=True) 
-            # st.markdown(f"📌 **Hemos detectado que perteneces a la coordinación {coord}. Si tienes disponibles puedes solicitar tus servicios:** [Ir al enlace]({link})")
+            st.markdown(f"📌 **Muy bien hemos encontrado autorizaciones, si tienes traslados disponibles puedes agendar tus servicios. Si requieres que te apoye un gestor puedes usar los botones de contacto**")
             
             telefono = "573503836066"
             mensaje = "Hola perro quiero más información."
@@ -70,11 +70,6 @@ if consulta:
             col2.link_button("🗣️​ Atención Paciente en WhatsApp", url_whatsapp, use_container_width=True)  # Centro
             col3.link_button("📲 Contacto Coordinación en WhatsApp", url_whatsapp, use_container_width=True)  # Derecha
 
-
     else:
         st.error("Por favor, ingrese un ID numérico válido.")
 conn.close()
-
-
-
-            
