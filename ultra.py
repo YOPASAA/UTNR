@@ -17,7 +17,8 @@ st.set_page_config(
         # "About": "Aplicación de análisis de ventas creada con Streamlit 🚀"
     }
 )
-st.title("Bienvenido al Validador 🗂️")
+st.title("Bienvenid@ al Validador UT Nuevo Reneteur")
+sr.write("Aca podras consultar si las autorizaciones que tienes con nosotros para tu trasporte espcial")
 st.sidebar.header("Menú de Navegación")
 
 db_filename = "Base_Pacientes_NAL_BOT.bd"
@@ -26,7 +27,7 @@ url = f"https://drive.google.com/uc?id={file_id}"
 gdown.download(url, db_filename, quiet=False)
 
 conn = sqlite3.connect(db_filename)
-consulta = st.text_input("Ingrese el número de identificación")
+consulta = st.text_input("Ingrese el número de identificación del *paciente*")
 
 if consulta:
     if consulta.isdigit():  # Asegura que el ID es un número
