@@ -58,9 +58,8 @@ if consulta:
             link = df_2["Link"].values[0]
             st.subheader(f"👤{tipo}-{consulta} | {nombre} | {ciudad}")
             st.dataframe(df, use_container_width=True) 
-            st.markdown("📅 **Muy bien hemos encontrado autorizaciones, si tienes traslados disponibles puedes agendar tus servicios. Si requieres que te apoye un gestor puedes usar los botones de contacto**")
-            st.markdown("🗣️ **Si requieres que te apoye o necesitas consultar con un gestor acerca de tus autorizaciones**")
-            st.markdown("📲 **Si ya agendaste tus servicios y requieres hacer algun cambio o cancelacíón**")
+            st.markdown("💡**Muy bien hemos encontrado autorizaciones, si tienes traslados disponibles puedes agendar tus servicios. Si requieres que te apoye un gestor puedes usar los botones de contacto**")
+
             telefono = "573503836066"
             mensaje = "Hola perro quiero más información."
             mensaje_codificado = urllib.parse.quote(mensaje)  # Codifica caracteres especiales
