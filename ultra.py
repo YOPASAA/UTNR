@@ -27,7 +27,7 @@ url = f"https://drive.google.com/uc?id={file_id}"
 gdown.download(url, db_filename, quiet=False)
 
 conn = sqlite3.connect(db_filename)
-consulta = st.text_input("Ingrese el número de identificación del *paciente*")
+consulta = st.text_input("Ingrese el número de identificación del **paciente**")
 
 if consulta:
     if consulta.isdigit():  # Asegura que el ID es un número
