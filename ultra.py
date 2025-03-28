@@ -1,5 +1,4 @@
 import streamlit as st
-import gdown
 import pandas as pd
 import sqlite3
 import os
