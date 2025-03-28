@@ -1,4 +1,4 @@
-import streamlit as st
+    import streamlit as st
 import pandas as pd
 import gdown
 import sqlite3
@@ -36,19 +36,21 @@ if consulta:
         query = "SELECT PERIODO, VOLANTE, TRASLADOS_AUTORIZADOS, DISPONIBLES, COD_AXSEG, MIPRES, COORDINACIÓN FROM mi_tabla WHERE ID = ?"
         df = pd.read_sql_query(query, conn, params=(consulta,))
     
-        query_3 = "SELECT Link FROM coordinacion WHERE COORDINACIÓN = ? LIMIT 1"
-        df_3 = pd.read_sql_query(query_3, conn, params=(consulta,))
-        
         if df.empty:
             st.warning("No se encontraron resultados.")
         else:
             nombre = df_2["NOMBRE"].values[0]
             ciudad = df_2["CIUDAD"].values[0]
             tipo = df_2["TIPO_ID"].values[0]
-            link = df_3.iloc[0, 0] 
+            coord = df["COORDINACIÓN"].values[0]
+
+            query_3 = "SELECT Link FROM coordinacion WHERE COORDINACIÓN =  LIMIT 1"
+            df_3 = pd.read_sql_query(query_3, conn, params=(consulta,))
+  
             st.subheader(f"👤{tipo}-{consulta} | {nombre} | {ciudad}")
-            st.dataframe(df, use_container_width=True)
-            st.subheader(f"{link}")
+            st.dataframe(df, use_container_width=True) 
+            link = df_3["Link"].values[0]
+            st.markdown(f"📌 **Link de la Coordinación:** [Ir al enlace]({link})")
     else:
         st.error("Por favor, ingrese un ID numérico válido.")
 conn.close()
