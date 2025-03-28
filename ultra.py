@@ -60,16 +60,16 @@ if consulta:
             st.markdown(f"📌 **Hemos detectado que perteneces a la coordinación {coord}. Si tienes disponibles puedes solicitar tus servicios:** [Ir al enlace]({link})")
 
 
+            telefono = "573503836066"
+            mensaje = "Hola perro quiero más información."
+            mensaje_codificado = urllib.parse.quote(mensaje)  # Codifica caracteres especiales
+            url_whatsapp = f"https://wa.me/{telefono}?text={mensaje_codificado}"
+            st.link_button("📲 Chat en WhatsApp", url_whatsapp, use_container_width=True)
 
     else:
         st.error("Por favor, ingrese un ID numérico válido.")
 conn.close()
 
-telefono = "573503836066"
-mensaje = "Hola perro quiero más información."
-mensaje_codificado = urllib.parse.quote(mensaje)  # Codifica caracteres especiales
-url_whatsapp = f"https://wa.me/{telefono}?text={mensaje_codificado}"
-st.link_button("📲 Chat en WhatsApp", url_whatsapp, use_container_width=True)
 
 
 
