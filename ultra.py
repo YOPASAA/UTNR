@@ -44,7 +44,7 @@ if consulta:
             tipo = df_2["TIPO_ID"].values[0]
             coord = df["COORDINACIÓN"].values[0]
 
-            query_3 = "SELECT Link FROM coordinacion WHERE COORDINACIÓN =  LIMIT 1"
+            query_3 = "SELECT Link FROM coordinacion WHERE COORDINACIÓN = ? LIMIT 1"
             df_3 = pd.read_sql_query(query_3, conn, params=(consulta,))
   
             st.subheader(f"👤{tipo}-{consulta} | {nombre} | {ciudad}")
