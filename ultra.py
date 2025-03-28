@@ -58,7 +58,7 @@ if consulta:
             link = df_2["Link"].values[0]
             st.subheader(f"👤{tipo}-{consulta} | {nombre} | {ciudad}")
             st.dataframe(df, use_container_width=True) 
-            st.markdown("💡**Muy bien hemos encontrado autorizaciones, si tienes traslados disponibles puedes agendar tus servicios. Si requieres que te apoye un gestor puedes usar los botones de contacto**")
+            st.markdown("💡**Muy bien hemos encontrado autorizaciones, si tienes traslados disponibles puedes agendar tus servicios.**")
 
             telefono = "573503836066"
             mensaje = "Hola perro quiero más información."
