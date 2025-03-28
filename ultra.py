@@ -18,7 +18,7 @@ st.set_page_config(
     }
 )
 st.title("Bienvenid@ al Validador UT Nuevo Reneteur")
-sr.write("Aca podras consultar si las autorizaciones que tienes con nosotros para tu trasporte espcial")
+sr.subheader("Aca podras consultar si las autorizaciones que tienes con nosotros para tu trasporte especial")
 st.sidebar.header("Menú de Navegación")
 
 db_filename = "Base_Pacientes_NAL_BOT.bd"
