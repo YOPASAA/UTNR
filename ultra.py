@@ -75,8 +75,8 @@ if consulta:
             
             col1, col2, col3 = st.columns([1, 1, 1])
             col1.link_button("📅 Solicitar Servicios",link, use_container_width=True)  # Izquierda
-            col2.link_button("🗣️​ Atención Paciente en WhatsApp", url_whatsapp_at, use_container_width=True)  # Centro
-            col3.link_button("📲 Contacto Coordinación en WhatsApp", url_whatsapp_co, use_container_width=True)  # Derecha
+            col2.link_button("🗣️​ Atención Paciente vía WhatsApp", url_whatsapp_at, use_container_width=True)  # Centro
+            col3.link_button("✏️ Cancelar/modificar un servicio vía WhatsApp", url_whatsapp_co, use_container_width=True)  # Derecha
 
 
     else:
