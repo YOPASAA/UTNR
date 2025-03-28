@@ -36,8 +36,8 @@ if consulta:
         query = "SELECT PERIODO, VOLANTE, TRASLADOS_AUTORIZADOS, DISPONIBLES, COD_AXSEG, MIPRES, COORDINACIÓN FROM mi_tabla WHERE ID = ?"
         df = pd.read_sql_query(query, conn, params=(consulta,))
     
-            query_3 = "SELECT Link FROM coordinacion WHERE COORDINACIÓN = ? LIMIT 1"
-            df_3 = pd.read_sql_query(query_3, conn, params=(consulta,))
+        query_3 = "SELECT Link FROM coordinacion WHERE COORDINACIÓN = ? LIMIT 1"
+        df_3 = pd.read_sql_query(query_3, conn, params=(consulta,))
         
         if df.empty:
             st.warning("No se encontraron resultados.")
