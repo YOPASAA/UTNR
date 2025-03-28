@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import gdown
 import sqlite3
 import os
 import time
@@ -18,6 +19,7 @@ st.set_page_config(
 
 st.title("Bienvenido al Validador 🗂️")
 st.sidebar.header("Menú de Navegación")
+
 db_filename = "Base_Pacientes_NAL_BOT.bd"
 file_id = "1o8CFlVb0HERuErdoNz6iXl9MMgzzQuvX"
 url = f"https://drive.google.com/uc?id={file_id}"
