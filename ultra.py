@@ -40,7 +40,9 @@ if consulta:
             mi_tabla.TIPO_ID,
             mi_tabla.PROGRAMA,
             mi_tabla.CIUDAD,
-            coordinacion.Link
+            coordinacion.Link,
+            coordinacion.CEL,
+            coordinacion.TelCoord
         FROM mi_tabla
         LEFT JOIN coordinacion
         ON mi_tabla.COORDINACIÓN = coordinacion.COORDINACIÓN
@@ -59,16 +61,22 @@ if consulta:
             st.subheader(f"👤{tipo}-{consulta} | {nombre} | {ciudad}")
             st.dataframe(df, use_container_width=True) 
             st.markdown("💡**Muy bien hemos encontrado autorizaciones, si tienes traslados disponibles puedes agendar tus servicios.**")
-
-            telefono = "573503836066"
+            
+            tel_at = df_2["CEL"].values[0]
             mensaje = "Hola perro quiero más información."
             mensaje_codificado = urllib.parse.quote(mensaje)  # Codifica caracteres especiales
-            url_whatsapp = f"https://wa.me/{telefono}?text={mensaje_codificado}"
+            url_whatsapp = f"https://wa.me/{tel_at}?text={mensaje_codificado}"
+            
+            tel_co = df_2["TelCoord"].values[0]
+            mensaje = "Hola perro quiero más información."
+            mensaje_codificado = urllib.parse.quote(mensaje)  # Codifica caracteres especiales
+            url_whatsapp = f"https://wa.me/{tel_co}?text={mensaje_codificado}"
             
             col1, col2, col3 = st.columns([1, 1, 1])
             col1.link_button("📅 Solicitar Servicios",link, use_container_width=True)  # Izquierda
             col2.link_button("🗣️​ Atención Paciente en WhatsApp", url_whatsapp, use_container_width=True)  # Centro
             col3.link_button("📲 Contacto Coordinación en WhatsApp", url_whatsapp, use_container_width=True)  # Derecha
+
 
     else:
         st.error("Por favor, ingrese un ID numérico válido.")
