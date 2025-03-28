@@ -37,7 +37,7 @@ if consulta:
         df = pd.read_sql_query(query, conn, params=(consulta,))
 
         query_3 = "SELECT COORDINACIÓN FROM mi_tabla JOIN coordinacion ON COORDINACIÓN = COORDINACIÓN ?"
-        df_3 = pd.read_sql_query(query, conn, params=(consulta))
+        df_3 = pd.read_sql_query(query_3, conn, params=(consulta))
         
         if df.empty:
             st.warning("No se encontraron resultados.")
