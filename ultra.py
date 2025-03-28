@@ -46,7 +46,7 @@ if consulta:
             ciudad = df_2["CIUDAD"].values[0]
             tipo = df_2["TIPO_ID"].values[0]
             st.subheader(f"👤{tipo}-{consulta} | {nombre} | {ciudad}")
-            st.dataframe(df, use_container_width=True)
+            #st.dataframe(df, use_container_width=True)
             st.dataframe(df_3, use_container_width=True)
     else:
         st.error("Por favor, ingrese un ID numérico válido.")
