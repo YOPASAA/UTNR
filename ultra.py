@@ -17,9 +17,10 @@ st.set_page_config(
         # "About": "Aplicación de análisis de ventas creada con Streamlit 🚀"
     }
 )
+st.sidebar.header("Menú de Navegación")
+
 st.title("Validador UT Nuevo Renetur")
 st.subheader("En este apartado podrás consultar las autorizaciones vigentes relacionadas con tu transporte especial")
-st.sidebar.header("Menú de Navegación")
 
 db_filename = "Base_Pacientes_NAL_BOT.bd"
 file_id = "1o8CFlVb0HERuErdoNz6iXl9MMgzzQuvX"
