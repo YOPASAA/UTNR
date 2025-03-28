@@ -20,31 +20,8 @@ st.set_page_config(
 st.title("Bienvenido al Validador 🗂️")
 st.sidebar.header("Menú de Navegación")
 
-# Configurar rutas
-EXCEL_PATH = "Base_Pacientes_NAL_BOT.xlsx"
-DB_PATH = r"G:/Mi unidad/UNIDAD_YVAN/Base_Pacientes_NAL/Base_Pacientes_NAL_BOT.bd"
-
-file_id ="1sqmGuz-npLggyJAt5V9WkBkg6ZZi8fvJ"
-url = f"https://docs.google.com/spreadsheets/d/{file_id}"
-
-if not os.path.exists(EXCEL_PATH):
-    st.info("Descargando base de datos...")
-    gdown.download(url, EXCEL_PATH, fuzzy=True, quiet=False)
-    st.success("Base de datos descargada con éxito.")
-   
-# Función para cargar el Excel a SQLite si ha cambiado
-def actualizar_base_datos():
-    if not os.path.exists(DB_PATH) or os.path.getmtime(EXCEL_PATH) > os.path.getmtime(DB_PATH):
-        df = pd.read_excel(EXCEL_PATH, engine="    ")
-        conn = sqlite3.connect(DB_PATH)
-        df.to_sql("mi_tabla", conn, if_exists="replace", index=False)
-        conn.close()
-        st.success("Base de datos actualizada con éxito.")
-        return df
-    else:
-        st.info("Los datos están actualizados.")
+DB_PATH = "Base_Pacientes_NAL_BOT.bd"
         
-actualizar_base_datos()
 conn = sqlite3.connect(DB_PATH)
 # Entrada para consulta SQL (opcional)
 
