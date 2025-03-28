@@ -17,7 +17,7 @@ st.set_page_config(
         # "About": "Aplicación de análisis de ventas creada con Streamlit 🚀"
     }
 )
-st.title("Bienvenid@ al Validador UT Nuevo Renetur")
+st.title("Validador UT Nuevo Renetur")
 st.subheader("En este apartado podrás consultar las autorizaciones vigentes relacionadas con tu transporte especial")
 st.sidebar.header("Menú de Navegación")
 
