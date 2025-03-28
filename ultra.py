@@ -18,11 +18,13 @@ st.set_page_config(
 
 st.title("Bienvenido al Validador 🗂️")
 st.sidebar.header("Menú de Navegación")
+db_filename = "Base_Pacientes_NAL_BOT.bd"
+file_id = "1o8CFlVb0HERuErdoNz6iXl9MMgzzQuvX"
+url = f"https://drive.google.com/uc?id={file_id}"
 
-DB_PATH = "Base_Pacientes_NAL_BOT.bd"
-        
-conn = sqlite3.connect(DB_PATH)
-# Entrada para consulta SQL (opcional)
+gdown.download(url, db_filename, quiet=False)
+
+conn = sqlite3.connect(db_filename)
 
 consulta = st.text_input("Ingrese el número de identificación")
 
