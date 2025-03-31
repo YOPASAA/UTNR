@@ -82,7 +82,3 @@ if consulta:
     else:
         st.error("Por favor, ingrese un ID numérico válido.")
 conn.close()
-
-
-
-            
