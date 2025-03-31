@@ -18,7 +18,7 @@ st.set_page_config(
     }
 )
 st.sidebar.header("Menú de Navegación")
-col1,col2 = st.columns([1,1])
+col1,col2 = st.columns([1,8])
 with col1:
     st.image("LOGO.webp", width=150)  
 with col2:
