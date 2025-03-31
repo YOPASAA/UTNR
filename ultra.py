@@ -63,6 +63,7 @@ if consulta:
             coord = df["COORDINACIÓN"].values[0]
             link = df_2["Link"].values[0]
 
+
             col1, col2 = st.columns([2, 1])
             with col1:
                 st.subheader(f"👤{tipo}-{consulta} | {nombre} | {ciudad}")
@@ -77,7 +78,7 @@ if consulta:
                 df_filtrado = df  # Mostrar todos los datos si no hay filtro
             
             st.data_editor(df_filtrado, use_container_width=True, hide_index=True, disabled=True)
-            st.markdown("💡**Muy bien hemos encontrado autorizaciones, si cuentas con traslados disponibles puedes solicitar servicios.**")
+            st.markdown("💡**Muy bien hemos encontrado autorizaciones, si tienes traslados disponibles puedes agendar tus servicios.**")
             
             tel_at = df_2["CEL"].values[0]
             mensaje = "Hola atencion quiero más información."
@@ -93,6 +94,7 @@ if consulta:
             col1.link_button("📅 Solicitar Servicios",link, use_container_width=True)  # Izquierda
             col2.link_button("🗣️​ Atención Paciente vía WhatsApp", url_whatsapp_at, use_container_width=True)  # Centro
             col3.link_button("✏️ Cancelar/modificar un servicio vía WhatsApp", url_whatsapp_co, use_container_width=True)  # Derecha
+
 
     else:
         st.error("Por favor, ingrese un ID numérico válido.")
