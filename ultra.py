@@ -17,7 +17,7 @@ st.set_page_config(
         # "About": "Aplicación de análisis de ventas creada con Streamlit 🚀"
     }
 )
-st.sidebar.header("Menú de Navegación")
+st.sidebar.title("Menú de Navegación")
 col1,col2 = st.columns([1,8])
 with col1:
     st.image("Imagen1.png", width=150)  
