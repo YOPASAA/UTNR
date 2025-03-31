@@ -20,7 +20,7 @@ st.set_page_config(
 st.sidebar.header("Menú de Navegación")
 col1,col2 = st.columns([1,8])
 with col1:
-    st.image("LOGO.webp", width=150)  
+    st.image("Imagen1.png", width=150)  
 with col2:
     st.write("")  # Espacio en blanco
     st.title("Validador UT Nuevo Renetur")
