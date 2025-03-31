@@ -18,8 +18,12 @@ st.set_page_config(
     }
 )
 st.sidebar.header("Menú de Navegación")
-st.image("LOGO.webp", width=150)  
-st.title("Validador UT Nuevo Renetur")
+col1,col2 = st.columns([1,2])
+with col1:
+    st.image("LOGO.webp", width=150)  
+with col2:
+    st.title("Validador UT Nuevo Renetur")
+
 st.subheader("En este apartado podrás consultar las autorizaciones vigentes relacionadas con tu transporte especial")
 
 db_filename = "Base_Pacientes_NAL_BOT.bd"
@@ -29,7 +33,6 @@ gdown.download(url, db_filename, quiet=False)
 conn = sqlite3.connect(db_filename)
 
 col1, col2, col3 = st.columns([1, 1, 1])
-
 with col1:
     consulta = st.text_input("Ingrese el número de identificación del **paciente**")
 
