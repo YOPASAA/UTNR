@@ -23,8 +23,7 @@ with col1:
     st.image("LOGO.webp", width=150)  
 with col2:
     st.title("Validador UT Nuevo Renetur")
-
-st.subheader("En este apartado podrás consultar las autorizaciones vigentes relacionadas con tu transporte especial")
+    st.subheader("En este apartado podrás consultar las autorizaciones vigentes relacionadas con tu transporte especial")
 
 db_filename = "Base_Pacientes_NAL_BOT.bd"
 file_id = "1o8CFlVb0HERuErdoNz6iXl9MMgzzQuvX"
