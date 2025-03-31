@@ -22,6 +22,7 @@ col1,col2 = st.columns([1,8])
 with col1:
     st.image("LOGO.webp", width=150)  
 with col2:
+    st.write("")  # Espacio en blanco
     st.title("Validador UT Nuevo Renetur")
 
 st.info("En este espacio podras consultar si cuentas con autorizaciones vigentes para tu transporte con nosotros, **Nuevo Renetur**.")
@@ -32,11 +33,18 @@ url = f"https://drive.google.com/uc?id={file_id}"
 gdown.download(url, db_filename, quiet=False)
 conn = sqlite3.connect(db_filename)
 
+if "consulta_realizada" not in st.session_state:
+    st.session_state.consulta_realizada = False
+
 col1, col2, col3 = st.columns([1, 1, 1])
 with col1:
     consulta = st.text_input("Ingrese el número de identificación del **paciente**")
+with col2:
+    st.write("")  # Espacio en blanco
+    st.write("")  # Más espacio para empujar el botón hacia abajo
+    ejecutar_consulta = st.button("🔍 Consultar")
 
-if consulta:
+if consulta and (ejecutar_consulta or not st.session_state.consulta_realizada):
     if consulta.isdigit():  # Asegura que el ID es un número
         query = "SELECT PERIODO, VOLANTE, TRASLADOS_AUTORIZADOS, DISPONIBLES, COD_AXSEG, MIPRES, COORDINACIÓN FROM mi_tabla WHERE ID = ?"
         df = pd.read_sql_query(query, conn, params=(consulta,))
