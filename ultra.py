@@ -60,7 +60,7 @@ if consulta:
             coord = df["COORDINACIÓN"].values[0]
             link = df_2["Link"].values[0]
             st.subheader(f"👤{tipo}-{consulta} | {nombre} | {ciudad}")
-            st.dataframe(df.reset_index(drop=True), use_container_width=True) 
+            st.data_editor(df, use_container_width=True, hide_index=True, disabled=True)
             st.markdown("💡**Muy bien hemos encontrado autorizaciones, si tienes traslados disponibles puedes agendar tus servicios.**")
             
             tel_at = df_2["CEL"].values[0]
