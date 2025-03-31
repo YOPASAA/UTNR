@@ -18,7 +18,7 @@ st.set_page_config(
     }
 )
 st.sidebar.header("Menú de Navegación")
-
+st.image("LOGO.webp", width=150)  
 st.title("Validador UT Nuevo Renetur")
 st.subheader("En este apartado podrás consultar las autorizaciones vigentes relacionadas con tu transporte especial")
 
