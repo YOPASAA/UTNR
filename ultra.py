@@ -23,7 +23,8 @@ with col1:
     st.image("LOGO.webp", width=150)  
 with col2:
     st.title("Validador UT Nuevo Renetur")
-    st.markdown("En este apartado podrás consultar las autorizaciones vigentes relacionadas con tu transporte especial")
+    st.info("Mensaje")
+    st.markdown("En este espacio podras consultar si cuentas con autorizaciones vigentes para tu transporte con nosotros, Nuevo Renetur.")
 
 db_filename = "Base_Pacientes_NAL_BOT.bd"
 file_id = "1o8CFlVb0HERuErdoNz6iXl9MMgzzQuvX"
@@ -80,7 +81,7 @@ if consulta:
                 df_filtrado = df  # Mostrar todos los datos si no hay filtro
             
             st.data_editor(df_filtrado, use_container_width=True, hide_index=True, disabled=True)
-            st.markdown("💡**Muy bien hemos encontrado autorizaciones, si tienes traslados disponibles puedes agendar tus servicios.**")
+            st.markdown("💡**Muy bien hemos encontrado autorizaciones, si tienes traslados disponibles puedes solicitar tus servicios.**")
             
             tel_at = df_2["CEL"].values[0]
             mensaje = "Hola atencion quiero más información."
