@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
+import gdown
 import sqlite3
 import urllib.parse
-import gdown
 import os
 import time
 
@@ -26,9 +26,12 @@ db_filename = "Base_Pacientes_NAL_BOT.bd"
 file_id = "1o8CFlVb0HERuErdoNz6iXl9MMgzzQuvX"
 url = f"https://drive.google.com/uc?id={file_id}"
 gdown.download(url, db_filename, quiet=False)
-
 conn = sqlite3.connect(db_filename)
-consulta = st.text_input("Ingrese el número de identificación del **paciente**")
+
+col1, col2, col3 = st.columns([1, 1, 1])
+
+with col1:
+    consulta = st.text_input("Ingrese el número de identificación del **paciente**")
 
 if consulta:
     if consulta.isdigit():  # Asegura que el ID es un número
@@ -59,17 +62,22 @@ if consulta:
             tipo = df_2["TIPO_ID"].values[0]
             coord = df["COORDINACIÓN"].values[0]
             link = df_2["Link"].values[0]
-            st.subheader(f"👤{tipo}-{consulta} | {nombre} | {ciudad}")
-            
-            periodos_unicos = df["PERIODO"].unique()
-            selected_periodo = st.selectbox("Selecciona el periodo para filtrar:", options=["Todos"] + list(periodos_unicos))
+
+            col1, col2 = st.columns([2, 1])
+            with col1:
+                st.subheader(f"👤{tipo}-{consulta} | {nombre} | {ciudad}")
+                        
+            with col2:
+                periodos_unicos = df["PERIODO"].unique()
+                selected_periodo = st.selectbox("Selecciona el periodo para filtrar:", options=["Todos"] + list(periodos_unicos))
+        
             if selected_periodo != "Todos":
                 df_filtrado = df[df["PERIODO"] == selected_periodo]
             else:
                 df_filtrado = df  # Mostrar todos los datos si no hay filtro
             
             st.data_editor(df_filtrado, use_container_width=True, hide_index=True, disabled=True)
-            st.markdown("💡**Muy bien hemos encontrado autorizaciones, si tienes traslados disponibles puedes agendar tus servicios.**")
+            st.markdown("💡**Muy bien hemos encontrado autorizaciones, si cuentas con traslados disponibles puedes solicitar servicios.**")
             
             tel_at = df_2["CEL"].values[0]
             mensaje = "Hola atencion quiero más información."
@@ -85,7 +93,6 @@ if consulta:
             col1.link_button("📅 Solicitar Servicios",link, use_container_width=True)  # Izquierda
             col2.link_button("🗣️​ Atención Paciente vía WhatsApp", url_whatsapp_at, use_container_width=True)  # Centro
             col3.link_button("✏️ Cancelar/modificar un servicio vía WhatsApp", url_whatsapp_co, use_container_width=True)  # Derecha
-
 
     else:
         st.error("Por favor, ingrese un ID numérico válido.")
