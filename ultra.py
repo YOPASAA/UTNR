@@ -60,7 +60,15 @@ if consulta:
             coord = df["COORDINACIÓN"].values[0]
             link = df_2["Link"].values[0]
             st.subheader(f"👤{tipo}-{consulta} | {nombre} | {ciudad}")
-            st.data_editor(df, use_container_width=True, hide_index=True, disabled=True)
+            
+            periodos_unicos = df["PERIODO"].unique()
+            selected_periodo = st.selectbox("Selecciona el periodo para filtrar:", options=["Todos"] + list(periodos_unicos))
+            if selected_periodo != "Todos":
+                df_filtrado = df[df["PERIODO"] == selected_periodo]
+            else:
+                df_filtrado = df  # Mostrar todos los datos si no hay filtro
+            
+            st.data_editor(df_filtrado, use_container_width=True, hide_index=True, disabled=True)
             st.markdown("💡**Muy bien hemos encontrado autorizaciones, si tienes traslados disponibles puedes agendar tus servicios.**")
             
             tel_at = df_2["CEL"].values[0]
