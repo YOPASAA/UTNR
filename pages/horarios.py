@@ -43,7 +43,9 @@ with col3:
     st.subheader("Nuestro formulario recibira tus solicitudes de servicios de lunes a viernes de 1:00 hrs (1am) a 14:00 hrs (2pm)")
     st.write("Puedes acceder a tu formulario consultando con la pagina principal")
 
-st.title("Más acerca de nosotros en la web")
-col1, col2, col3, col4, col5, col6, col7, col8, col9 = st.columns([1,1,1,1,1,1,1,1,1])
+
+col1, col2 = st.columns([10,1])
+with col1:
+  st.title("Más acerca de nosotros en la web")
 with col6:
   st.link_button(f"Visitar","https://nuevorenetur.com.co", use_container_width=True)
