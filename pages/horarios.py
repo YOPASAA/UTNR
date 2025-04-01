@@ -47,5 +47,5 @@ with col3:
 col1, col2 = st.columns([10,1])
 with col1:
   st.title("Más acerca de nosotros en la web")
-with col6:
+with col2:
   st.link_button(f"Visitar","https://nuevorenetur.com.co", use_container_width=True)
