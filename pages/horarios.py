@@ -44,4 +44,6 @@ with col3:
     st.write("Puedes acceder a tu formulario consultando con la pagina principal")
 
 st.title("Más acerca de nosotros en la web")
-st.link_button(f"Visitar","https://nuevorenetur.com.co", use_container_width=True)
+col1, col2, col3, col4, col5, col6, col7, col8, col9 = st.columns([1,1,1,1,1,1,1,1,1])
+with col6:
+  st.link_button(f"Visitar","https://nuevorenetur.com.co", use_container_width=True)
