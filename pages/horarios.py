@@ -48,4 +48,4 @@ col1, col2 = st.columns([1,1])
 with col1:
   st.link_button("Visitar: https://nuevorenetur.com.co/","https://nuevorenetur.com.co", use_container_width=True)
 with col2:
-  sr.write("")
+  st.write("")
