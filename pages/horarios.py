@@ -5,7 +5,13 @@ import sqlite3
 # import urllib.parse
 # import os
 # import time
-st.set_page_config(layout="wide")
+st.set_page_config(
+    page_title="Asistente UTNR",
+    page_icon="🤖",
+    layout="wide",
+    initial_sidebar_state="collapsed",
+    }
+)
                    
 db_filename = "Base_Pacientes_NAL_BOT.bd"
 file_id = "1o8CFlVb0HERuErdoNz6iXl9MMgzzQuvX"
