@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="collapsed",
 )
-                   
+st.sidebar.title("Menú de Navegación")                 
 db_filename = "Base_Pacientes_NAL_BOT.bd"
 file_id = "1o8CFlVb0HERuErdoNz6iXl9MMgzzQuvX"
 url = f"https://drive.google.com/uc?id={file_id}"
