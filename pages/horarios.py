@@ -28,7 +28,7 @@ with col1:
     df = pd.read_sql_query(query, conn)
     st.write("Puedes hacer contacto vía WhatsApp con nuestras coordinaciónes:")
 
-    for index, row in df.iterrows():
+    for _, row in df.iterrows():
         numero = row["CEL"]
         coordinacion = row["COORDINACIÓN"]
         cobertura = row["Cobertura"]
