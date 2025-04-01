@@ -44,7 +44,7 @@ with col3:
     st.write("Puedes acceder a tu formulario consultando con la pagina principal")
 
 
-col1, col2 = st.columns([5,1])
+col1, col2 = st.columns([2,1])
 with col1:
   st.title("Más acerca de nosotros en la web")
 with col2:
