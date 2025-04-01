@@ -18,7 +18,7 @@ with col1:
     st.image("Imagen1.png", width=100)  
 with col2:
     # st.write("")  # Espacio en blanco
-    st.title("Nuestros Horarios")
+    st.title("Nuestros Horarios y Canales de Atención")
 
 col1,col2,col3 = st.columns([5,1,5])
 with col1:
