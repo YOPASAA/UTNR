@@ -46,7 +46,7 @@ with col2:
 with col3:
     st.title("Solicitud Servicios 📝 (formulario)")
     st.subheader("Nuestro formulario recibira tus solicitudes de servicios de lunes a viernes de 1:00 hrs (1am) a 14:00 hrs (2pm)")
-    st.write("Puedes acceder a tu formulario consultando con la pagina principal")
+    st.write("Puedes acceder a tu formulario consultando en la pagina principal")
 st.write("")
 st.title("Más acerca de nosotros en la web")
 col1, col2 = st.columns([1,1])
