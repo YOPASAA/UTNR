@@ -24,15 +24,16 @@ col1,col2,col3 = st.columns([5,1,5])
 with col1:
     st.title("Atención al Usuario 🗣")
     st.subheader("Nuestros canales de atención estan disponibles de lunes a viernes de 8am a 4pm días hábiles.")
-    query = "SELECT COORDINACIÓN, CEL FROM coordinacion"
+    query = "SELECT COORDINACIÓN, CEL, Cobertura FROM coordinacion"
     df = pd.read_sql_query(query, conn)
     st.write("Puedes hacer contacto vía WhatsApp con nuestras coordinaciónes:")
 
     for index, row in df.iterrows():
         numero = row["CEL"]
         coordinacion = row["COORDINACIÓN"]
+        cobertura = row["Cobertura"]
         url_whatsapp = f"https://wa.me/{numero.replace('+', '')}"
-        st.link_button(f"{coordinacion}",url_whatsapp, use_container_width=True)
+        st.link_button(f"{coordinacion}: {cobertura}",url_whatsapp, use_container_width=True)
     conn.close()
     
 with col2:
