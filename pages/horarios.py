@@ -6,7 +6,7 @@ import sqlite3
 # import os
 # import time
 st.set_page_config(
-    page_title="Asistente UTNR",
+    page_title="Canales UTNR",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="collapsed",
