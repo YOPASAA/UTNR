@@ -42,4 +42,6 @@ with col3:
     st.title("Solicitud Servicios 📝 (formulario)")
     st.subheader("Nuestro formulario recibira tus solicitudes de servicios de lunes a viernes de 1:00 hrs (1am) a 14:00 hrs (2pm)")
     st.write("Puedes acceder a tu formulario consultando con la pagina principal")
-    
+
+st.title("Más acerca de nosotros en la web")
+st.link_button(f"Visitar","https://nuevorenetur.com.co", use_container_width=True)
